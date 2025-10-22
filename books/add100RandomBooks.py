@@ -5,8 +5,8 @@ import json
 from faker import Faker
 
 APIHOST = "http://library.demo.local"
-LOGIN = "Type your username"
-PASSWORD = "Type your password"
+LOGIN = "cisco"
+PASSWORD = "Cisco123!"
 
 def getAuthToken():
     authCreds = (LOGIN, PASSWORD)
@@ -35,7 +35,7 @@ def addBook(book, apiKey):
 
 # Get the Auth Token Key
 # apiKey = getAuthToken()
-apiKey = "cisco|3PNjBC-OJn3a5XK8VS-swKMDKBtbioP24Xq_5SCBRcI"
+apiKey = "cisco|vkuXs199-UtB3_9KoP4nQ7GYE0q5kM4jf9Dj_8OVHj4"
 
 # Using the faker module, generate random "fake" books
 fake = Faker()
