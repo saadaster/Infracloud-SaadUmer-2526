@@ -17,9 +17,9 @@ import json
 
 # --- Router details ---
 ROUTER = {
-    "host": "Your IP",   # IP address of the router
-    "user": "Your Username",
-    "password": "Your Pw"
+    "host": "192.168.56.101",   # IP address of the router
+    "user": "cisco",
+    "password": "cisco123!"
 }
 
 # --- Disable SSL warnings for self-signed certs ---
@@ -36,20 +36,24 @@ HEADERS = {
 
 # --- Helper: perform RESTCONF GET ---
 def restconf_get(resource):
-    """Send a RESTCONF GET and return parsed JSON or None"""
     url = f"{BASE_URL}/{resource}"
     response = requests.get(url,
                             auth=HTTPBasicAuth(ROUTER["user"], ROUTER["password"]),
                             headers=HEADERS,
                             verify=False)
-    if response.status_code == 200:
-        return response.json()
-    elif response.status_code == 204:
-        print(f"[i] {resource}: No content (empty dataset).")
-    elif response.status_code == 404:
-        print(f"[w] {resource}: Not supported on this version.")
-    else:
-        print(f"[!] HTTP {response.status_code} for {resource}")
+    try:
+        if response.status_code == 200:
+            return response.json()
+        elif response.status_code == 204:
+            print(f"[i] {resource}: No content.")
+        elif response.status_code == 404:
+            print(f"[w] {resource}: Not supported.")
+        else:
+            print(f"[!] {resource}: HTTP {response.status_code}")
+            print(response.text)
+    except ValueError:
+        print(f"[!] {resource}: Non-JSON response")
+        print(response.text)
     return None
 
 

@@ -5,9 +5,9 @@ from requests.auth import HTTPBasicAuth
 
 # --- Router details ---
 ROUTER = {
-    "host": "Your IP",   # CSR1Kv IP
-    "user": "Your User",
-    "password": "Your Pw"
+    "host": "192.168.56.101",   # CSR1Kv IP
+    "user": "cisco",
+    "password": "cisco123!"
 }
 
 # --- Disable SSL warnings for self-signed certs ---
@@ -53,13 +53,13 @@ platform_data = restconf_get("Cisco-IOS-XE-native:native/version")
 if platform_data:
     version = platform_data["Cisco-IOS-XE-native:version"]
     print(f"IOS XE Version: {version}")
-
-# === [3] Get interfaces ===
+ # === [3] Get interfaces ===
 interfaces_data = restconf_get("ietf-interfaces:interfaces/interface")
 if interfaces_data:
     print("\nInterfaces:")
     for intf in interfaces_data["ietf-interfaces:interface"]:
         print(f"- {intf['name']} : {intf.get('description', 'no description')}")
+
 
 print("\nOK: RESTCONF query complete.")
 

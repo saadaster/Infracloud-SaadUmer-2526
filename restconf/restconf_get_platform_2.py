@@ -17,9 +17,9 @@ import json
 
 # --- Router details ---
 ROUTER = {
-    "host": "Your IP",   # IP address of the router
-    "user": "Your Username",
-    "password": "Your Pw"
+    "host": "192.168.56.101",   # IP address of the router
+    "user": "cisco",
+    "password": "cisco123!"
 }
 
 # --- Disable SSL warnings for self-signed certs ---
