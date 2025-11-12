@@ -1,0 +1,48 @@
+{
+    "Computer": {
+        "SystemInfo": {
+            "Hostname": "ASUS",
+            "OSName": "Windows",
+            "OSVersion": "10.0.19045",
+            "Release": "10",
+            "Machine": "AMD64",
+            "Processor": "Intel64 Family 6 Model 165 Stepping 2, GenuineIntel"
+        },
+        "Processor": {
+            "PhysicalCores": 4,
+            "LogicalProcessors": 8,
+            "MaxFrequency_GHz": 2.5
+        },
+        "Memory": {
+            "TotalRAM_GB": 15.84,
+            "AvailableRAM_GB": 3.69
+        },
+        "Storage": [
+            {
+                "DeviceID": "C:",
+                "VolumeName": "OS",
+                "FileSystem": "NTFS",
+                "TotalSize_GB": 456.0,
+                "FreeSpace_GB": 118.96
+            },
+            {
+                "DeviceID": "D:",
+                "VolumeName": "NVMeSSD",
+                "FileSystem": "NTFS",
+                "TotalSize_GB": 465.75,
+                "FreeSpace_GB": 328.98
+            }
+        ],
+        "Network": {
+            "IPv4Address": "26.246.140.94",
+            "MACAddress": "42:09:27:9e:79:e4"
+        },
+        "GPU": [
+            {
+                "Name": "NVIDIA GeForce GTX 1650",
+                "DriverVersion": "560.94",
+                "VRAM_GB": 4096.0
+            }
+        ]
+    }
+}
