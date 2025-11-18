@@ -1,0 +1,15 @@
+
+file = open("devices.txt", "a")
+
+
+while True:
+    newItem = input("Enter a new device (type 'exit' to quit): ")
+
+    if newItem == "exit":
+        print("All done!")
+        break
+
+    file.write(newItem + "\n")
+
+
+file.close()
