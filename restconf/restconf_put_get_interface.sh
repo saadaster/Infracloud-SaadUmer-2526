@@ -1,7 +1,7 @@
 now=$(date)
 echo $now
 echo START REST API CALL
-IP_HOST="192.168.56.103"  
+IP_HOST="192.168.56.101"  
 RESTCONF_USERNAME="cisco" 
 RESTCONF_PASSWORD="cisco123!"
 DATA_FORMAT=application/yang-data+json
