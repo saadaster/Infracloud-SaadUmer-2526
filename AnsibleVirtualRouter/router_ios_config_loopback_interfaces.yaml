@@ -7,8 +7,8 @@
     - name: Add loopback interface
       ios_config:
         lines:
-          - interface Loopback12
-          - ip address 10.12.0.2 255.255.255.0
+          - interface Loopback1911
+          - ip address 10.12.19.11 255.255.255.0
       register: result
 
     - name: Display result

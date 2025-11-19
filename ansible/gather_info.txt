@@ -1,0 +1,72 @@
+
+PLAY [Gather information about IP interfaces] **********************************
+
+TASK [gather IOS facts] ********************************************************
+ok: [CSR1kv]
+
+TASK [Display IP interface information] ****************************************
+ok: [CSR1kv] => {
+    "ios_facts_result.ansible_facts.ansible_net_interfaces": {
+        "GigabitEthernet1": {
+            "bandwidth": 1000000,
+            "description": "IPv6 ADDRESS FROM ANSIBLE",
+            "duplex": "Full",
+            "ipv4": [
+                {
+                    "address": "192.168.56.101",
+                    "subnet": "24"
+                }
+            ],
+            "ipv6": [
+                {
+                    "address": "2001:DB8:ACAD:1::101",
+                    "subnet": "2001:DB8:ACAD:1::/64"
+                }
+            ],
+            "lineprotocol": "up",
+            "macaddress": "0800.2733.e54f",
+            "mediatype": "Virtual",
+            "mtu": 1500,
+            "operstatus": "up",
+            "type": "CSR vNIC"
+        },
+        "Loopback1111": {
+            "bandwidth": 8000000,
+            "description": "Loopback interface 1111 created with Ansible",
+            "duplex": null,
+            "ipv4": [
+                {
+                    "address": "10.10.11.11",
+                    "subnet": "32"
+                }
+            ],
+            "lineprotocol": "up",
+            "macaddress": null,
+            "mediatype": null,
+            "mtu": 1514,
+            "operstatus": "up",
+            "type": null
+        },
+        "Loopback1911": {
+            "bandwidth": 8000000,
+            "description": null,
+            "duplex": null,
+            "ipv4": [
+                {
+                    "address": "10.12.19.11",
+                    "subnet": "24"
+                }
+            ],
+            "lineprotocol": "up",
+            "macaddress": null,
+            "mediatype": null,
+            "mtu": 1514,
+            "operstatus": "up",
+            "type": null
+        }
+    }
+}
+
+PLAY RECAP *********************************************************************
+CSR1kv                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
