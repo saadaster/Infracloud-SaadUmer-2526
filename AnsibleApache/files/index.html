@@ -1,9 +1,60 @@
 <html>
 <head>
     <title>Ansible Apache Installation Experiment 3</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<style>
+  #mymap {
+    height: 300px;   /* adjust height */
+    width: 100%;     /* full width */
+    border: 1px solid #ccc;
+    margin-top: 20px;
+  }
+</style>
+
 </head>
 <body>
     <h1>Installed by Ansible</h1>
     <h2>Experiment succeeded</h2>
+    <h2>testing</h2>
+    <p>Current date and time:</p>
+<p id="datetime"></p>
+
+<script>
+  function updateDateTime() {
+    const now = new Date();
+    document.getElementById('datetime').innerHTML = now.toLocaleString();
+  }
+
+  // Update every second
+  setInterval(updateDateTime, 1000);
+
+  // Initial call
+  updateDateTime();
+</script>
+<h3>Our Location</h3>
+<div id="mymap"></div>
+
+<script>
+  // Set coordinates for your location
+  const lat = 50.835;     // example: Ixelles area
+  const lon = 4.366;
+
+  // Initialize map
+  const map = L.map('mymap').setView([lat, lon], 14);
+
+  // Load OpenStreetMap tiles
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+  }).addTo(map);
+
+  // Add a marker
+  L.marker([lat, lon]).addTo(map)
+    .bindPopup("We are here!")
+    .openPopup();
+</script>
+
 </body>
 </html>
