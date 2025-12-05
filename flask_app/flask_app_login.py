@@ -108,4 +108,4 @@ def main():
 
 #### MAIN
 if __name__ == "__main__":
-    microweb_app.run(host="0.0.0.0", port=5555, ssl_context='adhoc')
+    microweb_app.run(host="0.0.0.0", port=5555)
