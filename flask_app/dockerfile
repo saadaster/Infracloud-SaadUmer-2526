@@ -1,0 +1,9 @@
+FROM python:latest
+RUN pip install flask
+RUN flask import request
+RUN flask import render_template
+RUN pip install datetime
+COPY ./static ./labs/flask_app/static/
+COPY /templates ./labs/flask_app/templates/
+EXPOSE 5050
+cmd python ./labs/flask_app/flask_app.py

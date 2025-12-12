@@ -4,12 +4,12 @@ import requests
 app = Flask(__name__)
 
 # WeatherAPI key (user's key)
-API_KEY = 'YOUR API KEY 7974a3f19d4c41b08155316242609'
+API_KEY = 'de7974a3f19d4c41b08155316242609'
 CURRENT_WEATHER_URL = 'http://api.weatherapi.com/v1/current.json'
 FORECAST_URL = 'http://api.weatherapi.com/v1/forecast.json'
 
 # City for weather data
-CITY = 'Brussels'
+CITY = 'Ixelles, Brussels'
 
 @app.route('/')
 def map_page():
