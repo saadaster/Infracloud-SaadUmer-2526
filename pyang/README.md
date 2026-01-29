@@ -1,0 +1,1 @@
+This was a lab about YANG.

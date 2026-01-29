@@ -1,11 +1,18 @@
 # Infracloud-SaadUmer-2526
-<<<<<<< HEAD
-test
-15:38
-15:50
-16:01
-16:03
-16:08
+This is my repository for my university course 'Infrastructure and Cloud'
+This includes personal and class experiments.
+
+To clone my repo:
+# Create a folder
+$ mkdir git_Saad_Devasc
+
+# Clone the Python Code Examples
+
+$ git clone https://github.com/saadaster/Infracloud-SaadUmer-2526
+
+# Change into the new directory
+
+$ cd Infracloud-SaadUmer-2526
 =======
 # Infracloud-SaadUmer-2526
->>>>>>> 6f5fa8c2b89ede65d311776fb6385eaa5cddfc93
+

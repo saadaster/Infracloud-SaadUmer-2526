@@ -10,10 +10,11 @@
         state: directory
         mode: '0755'
 
-    - name: Maak een simpele index.html
+    - name: Kopieer de index.html van mijn computer naar de server
       copy:
+        src: files/index.html   
         dest: /opt/mijn-website/index.html
-        content: "<h1>Hallo vanaf Apache in Docker!</h1>"
+        mode: '0644'
 
     - name: Maak het docker-compose bestand aan
       copy:

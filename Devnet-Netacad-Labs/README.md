@@ -1,0 +1,1 @@
+This folder was cloned from the netacad github and includes only labs from the DevNet course.
