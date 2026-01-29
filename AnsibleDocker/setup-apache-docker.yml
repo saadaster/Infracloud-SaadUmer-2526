@@ -1,0 +1,34 @@
+---
+- name: Apache draaien in Docker
+  hosts: servers
+  become: true
+
+  tasks:
+    - name: Maak een map voor de website bestanden
+      file:
+        path: /opt/mijn-website
+        state: directory
+        mode: '0755'
+
+    - name: Maak een simpele index.html
+      copy:
+        dest: /opt/mijn-website/index.html
+        content: "<h1>Hallo vanaf Apache in Docker!</h1>"
+
+    - name: Maak het docker-compose bestand aan
+      copy:
+        dest: /opt/mijn-website/docker-compose.yml
+        content: |
+          services:
+            webserver:
+              image: httpd:latest
+              ports:
+                - "80:80"
+              volumes:
+                - ./index.html:/usr/local/apache2/htdocs/index.html
+              restart: always
+
+    - name: Start de Apache container
+      community.docker.docker_compose_v2:
+        project_src: /opt/mijn-website
+        state: present

@@ -1,0 +1,40 @@
+---
+- name: Installatie van Docker en Docker Compose
+  hosts: servers
+  become: true  # Voer uit als root/sudo
+
+  tasks:
+    - name: Update apt cache en installeer afhankelijkheden
+      apt:
+        name: 
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - software-properties-common
+        state: present
+        update_cache: yes
+
+    - name: Voeg Docker's officiële GPG key toe
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: Voeg de Docker repository toe
+      apt_repository:
+        repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable
+        state: present
+
+    - name: Installeer Docker Engine
+      apt:
+        name: 
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+        state: present
+        update_cache: yes
+
+    - name: Zorg dat Docker gestart is en draait bij opstarten
+      service:
+        name: docker
+        state: started
+        enabled: yes
